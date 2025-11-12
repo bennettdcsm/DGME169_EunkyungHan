@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techniques for Responsive Images</title>
+    <style>
+        /* Technique 1: Using max-width */
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #333;
+            display: block;
+            margin: 20px 0;
+        }
+
+        /* Technique 2: Media Queries */
+        @media (max-width: 600px) {
+            img {
+                width: 100%;
+                border-color: #007BFF;
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .image-container {
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Techniques for Responsive Images</h1>
+
+    <h2>1. Using CSS <code>max-width: 100%</code></h2>
+    <p>
+        This technique ensures images never exceed their container width while maintaining their aspect ratio automatically.
+    </p>
+    <div class="image-container">
+        <img src="gratitude800.png" alt="Example Image with max-width">
+    </div>
+
+    <h2>2. Using Media Queries</h2>
+    <p>
+        Media queries allow different image styling for different screen widths. For example, images can expand to full width on small screens.
+    </p>
+    <div class="image-container">
+        <img src="gratitude800.png" alt="Example Image with Media Query">
+    </div>
+</body>
+</html>
