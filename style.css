@@ -1,0 +1,387 @@
+/* styles.css */
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    font-family: 'open sans', sans-serif;
+    color: #732E1F;
+    background-color: #fefdfa;
+}
+
+button {
+    background-color: #732E1F;
+    border-color: #732E1F;
+    border-width: 0px;
+    border-radius: 30px;
+    padding: 12px 20px;
+    text-align: center;
+    color: #D9A7A7;
+    display: inline-flex;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* about_statement.html */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.image-container {
+    text-align: center;
+}
+
+/* The End of about_statement.html */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 1rem;
+    color: #732E1F;
+    padding: 1rem 2rem 0 1rem;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #D9A7A7;
+    background-color: #732E1F;
+    font-size: 0.9em;
+    padding: 1rem;
+}
+
+.social-icons a {
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #732E1F;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    text-decoration-line: underline;
+}
+
+
+/* Starting index.html */
+
+.container-wrapper {
+    display: grid;
+    grid-template-rows: 1fr;
+    max-width: 960px;
+}
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem 2rem;
+    gap: 1rem;
+}
+
+.intro {
+    flex: 1 1 300px;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.intro h3 {
+    font-size: 1.2rem;
+}
+
+.portrait img {
+    max-width: 300px;
+    border-radius: 0px;
+    padding: 1rem;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 3rem;
+    padding: 2rem;
+}
+
+.project {
+    background-color: #fefdfa;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    height: 200px;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 1 4px 12 px rgba(0, 0, 0, 0.1);
+    transition: all 0, 3s ease;
+}
+
+.project img {
+    width: 100%;
+}
+
+/* The end of index.html */
+
+/* Starting project.html */
+.container-project-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    align-content: center;
+    padding-bottom: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 960px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.container-project {
+    display: block;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.artwork-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.artwork-item {
+    border: 0.5px solid #732E1F;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-color: #732E1f;
+}
+
+.artwork-item>h3 {
+    margin-bottom: 0rem;
+}
+
+.artwork-image-frame {
+    padding: 0.5rem;
+    background-color: #fefdfa;
+    text-align: center;
+    flex-grow: 1;
+    overflow: visible;
+}
+
+.artwork-image-frame img {
+    max-width: 100%;
+    height: auto;
+    color: #732E1F;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.artwork-image-frame img.active {
+    transform: scale(1.2);
+}
+
+.expandable-image {
+    max-width: 300px;
+    transition: transform 0.3s ease, max-width 0.3s ease;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.expandable-image.active {
+    transform: scale(1.05);
+    max-width: 900px;
+    z-index: 100;
+    position: relative;
+}
+
+body.overlay-active::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+}
+
+.lightbox {
+    display: none;
+    /* hidden by default */
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-content {
+    background: #fefdfa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 95vw;
+    max-height: 85vh;
+    text-align: center;
+    object-fit: contain;
+}
+
+.lightbox-content h2 {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    color: #732E1F;
+}
+
+.lightbox-content p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #732E1F;
+    padding-bottom: 1rem;
+}
+
+.lightbox img {
+    max-width: 98vw;
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+#lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.artwork-item {
+    margin-bottom: 1rem;
+}
+
+.artwork-description {
+    font-size: 1rem;
+    color: #732E1F;
+}
+
+.button-choice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.button-choice a {
+    display: inline-block;
+}
+
+.button-choice button {
+    margin: 0;
+}
+
+/* The End of project.html */
+
+/* Responsiveness */
+
+@media (max-width: 960px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .portrait img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .portrait img {
+        max-width: 100%;
+    }
+
+    .container-project {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100px;
+        order: 1;
+    }
+
+    .main-content {
+        width: 100%;
+        order: 2;
+    }
+
+    .artwork-grid {
+        grid-template-columns: 1fr;
+        /* Switch to 1 column */
+    }
+
+    .expandable-image.active {
+        transform: scale(1.05);
+        max-width: 100%;
+        position: relative;
+        z-index: 10;
+    }
+
+    .button-choice {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+}
