@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Page</title>
+  <link rel="icon" href="images/favi.png" type="image_favicon" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">
+      <img src="images/logo_simple.png" alt="ehanbrandlogo" />
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="project_1.html">Project</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="contact-form">
+        <h2>Contact Me</h2>
+        <form action="mailto:ekcho81@gmail.com" method="post" enctype="text/plain">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+  </main>
+
+  <footer>
+    <div class>&copy; EHAN 2025</div>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/ehandesignstudio"><img src="images/icon_insta.png" alt="Instagram" /></a>
+      <a href="http://linkedin.com/in/eunkyung-han-60b575226"><img src="images/icon_linkedin.png" alt="LinkedIn" /></a>
+    </div>
+  </footer>
+</body>
+
+</html>
