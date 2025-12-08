@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects Page</title>
+  <title>EHAN - Project Index Page</title>
   <link rel="icon" href="images/favi.png" type="logo image" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -42,63 +42,98 @@
 
   <!-- Header Section -->
   <header>
-    <div class="logo"> 
-      <a href="index.html"><img src="images/logo_simple.png" alt="ehanbrandlogo" /></a>
+    <div class="logo">
+      <img src="images/logo_simple.png" alt="ehanbrandlogo" />
     </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="project_1.html">Project</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+
+    <!-- Hidden checkbox toggle -->
+    <input type="checkbox" id="menu-toggle" hidden>
+
+    <!-- Hamburger icon (mobile only via CSS) -->
+    <label for="menu-toggle" class="hamburger">☰</label>
+
+    <!-- Desktop navigation -->
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="project_1.html">Project</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Modal overlay (mobile only) -->
+    <div class="overlay">
+      <div class="modal">
+        <!-- Close button toggles the same checkbox -->
+        <label for="menu-toggle" class="close">&times;</label>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="project_1.html">Project</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
   </header>
+
 
   <!-- Main Content -->
   <main>
-    <div class="container-project-wrapper">
-      <div class="container-project">
-        <section class="projectpagetitle">
-          <h1>UXUI</h1>
-        </section>
-        <section class="artwork-grid">
-          <div class="artwork-item">
-            <div class="artwork-image-frame"> <img src="images/alcatraz.png" alt="The WebApp design of AlcatrazIslandTickets.com"
-                data-description="Targeting the Millennial users, the ticketing website was updated with sections of social proof and photo review"
-                data-title="Alcatraz Island Tickets Website Case Study" />
-            </div>
-            <h2>Alcatraz Island Tickets Website</h2>
-            </div>
-            <div class="artwork-item">
-            <div class="artwork-image-frame"> <img src="images/kymoma.png" alt="The WebApp design of KyMoma.com"
-                data-description="A fully responsive and accessible website was designed for a public art museum"
-                data-title="Ky Moma Website Case Study" />
-            </div>
-            <h2>Ky Moma Website</h2>
-            </div>
-            <div class="artwork-item">
-            <div class="artwork-image-frame"> <img src="images/yoga.png" alt="The WebApp design of CorepowerYoga.com"
-                data-description="The mobile app of yoga tutorial was developed for OnDemand users" data-title="CorepowerYoga App" />
-            </div>
-            <h2>CorepowerYoga Mobile App</h2>
-            </div>
-            <div class="artwork-item">
-            <div class="artwork-image-frame">
-              <img src="images/visionpro.png" alt="The self taught Project"
-                data-description="Glass icons were designed for testing its validation for customization enthusiasts"
-                data-title="A Self-taught UI Project" />
-            </div>
-            <h2>Glass Icons for Apple VisionPro</h2>
-           </div>
+    <div class="container-wrapper">
+      <section class="intro">
+        <h1>UXUI Projects</h1>
+      </section>
+      <section class="artwork-grid">
+        <div class="artwork-item">
+          <div class="artwork-image-frame">
+            <img src="images/alcatraz.png" alt="The WebApp design of AlcatrazIslandTickets.com" class="expandable-image"
+              data-description="Redesigned the ticketing website for Millennial users, adding social proof and photo reviews to enhance trust and engagement."
+              data-subtitle="&middot; UXUI Designer &middot; Timeline: 3 months, October - December 2024 &middot; Software: Figma"
+              data-title="Alcatraz Island Tickets Website Case Study" />
           </div>
-         </section>
-          <div class="button-choice">
-           <a href="index.html"><button>Home</button></a>
-           <a href="project_2.html"><button>View More</button></a>
+          <a href="project_1_alcatraz.html"><button>Read Details</button></a>
+          <h2>Responsive Website Design 1</h2>
+        </div>
+        <div class="artwork-item">
+          <div class="artwork-image-frame"> <img src="images/kymoma.png" alt="The WebApp design of KyMoma.com"
+              class="expandable-image"
+              data-description="Designed a fully responsive and accessible website for a public art museum, ensuring inclusivity and clarity across devices."
+              data-subtitle="&middot; UXUI Designer &middot; Timeline: 4 months, January - April 2025 &middot; Software: Figma"
+              data-title="Ky Moma Website Case Study" />
           </div>
-      </div>
-   </div>
+          <a href="project_1_kymoma.html"><button>Read Details</button></a>
+          <h2>Responsive Website Design 2</h2>
+        </div>
+        <div class="artwork-item">
+          <div class="artwork-image-frame"> <img src="images/yoga.png" alt="The WebApp design of CorepowerYoga.com"
+              class="expandable-image"
+              data-description="Developed a mobile yoga tutorial app for OnDemand platform users, focusing on usability and intuitive navigation."
+              data-subtitle="&middot; UXUI Designer &middot; Timeline: 5 months, August - December 2024 &middot; Software: Figma"
+              data-title="CorepowerYoga App" />
+          </div>
+          <a href="project_1_yoga.html"><button>Read Details</button></a>
+          <h2>Mobile App Design</h2>
+        </div>
+        <div class="artwork-item">
+          <div class="artwork-image-frame">
+            <img src="images/dvd.jpg" alt="The first UI project" class="expandable-image"
+              data-description="Infused a vintage mood into the DVD interface design, targeting the high-end film market."
+              data-subtitle="&middot; UX/UI Designer &middot; Timeline: 3 months, October - December 2023 &middot; Software: Adobe Illustrator & Photoshop"
+              data-title="Film Chef DVD Interface Design" />
+          </div>
+          <a href="project_1_dvd.html"><button>Read Details</button></a>
+          <h2>DVD Interface Design</h2>
+        </div>
+      </section>
+      <section class="hero">
+        <div class="button-choice">
+          <a href="index.html"><button>Go Home</button></a>
+          <a href="project_2.html"><button>Prints Gallery</button></a>
+        </div>
+      </section>
+      <br>
+    </div>
   </main>
 
   <!-- Lightbox overlay -->
@@ -107,8 +142,8 @@
       <h2 id="lightbox-title"></h2>
       <img id="lightbox-img" src="" alt="The enlarged image" />
       <p id="lightbox-desc"></p>
-      <span id="lightbox-close">&times;</span>
     </div>
+    <span id="lightbox-close">&times;</span>
   </div>
 
 
@@ -118,6 +153,7 @@
     <div class="social-icons">
       <a href="https://www.instagram.com/ehandesignstudio"><img src="images/icon_insta.png" alt="Instagram" /></a>
       <a href="http://linkedin.com/in/eunkyung-han-60b575226"><img src="images/icon_linkedin.png" alt="LinkedIn" /></a>
+      <a href="https://github.com/eunkyunghan"><img src="images/icon_github.png" alt="GitHub Icon" /></a>
     </div>
   </footer>
 </body>

@@ -4,49 +4,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Page</title>
+  <title>EHAN - About Page</title>
   <link rel="icon" href="images/favi.png" type="image_favicon" />
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
   <!-- Header Section -->
   <header>
     <div class="logo">
-      <a href="index.html"><img src="images/logo_simple.png" alt="ehanbrandlogo" /></a>
+      <img src="images/logo_simple.png" alt="ehanbrandlogo" />
     </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="project_1.html">Project</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+
+    <!-- Hidden checkbox toggle -->
+    <input type="checkbox" id="menu-toggle" hidden>
+
+    <!-- Hamburger icon (mobile only via CSS) -->
+    <label for="menu-toggle" class="hamburger">☰</label>
+
+    <!-- Desktop navigation -->
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="project_1.html">Project</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Modal overlay (mobile only) -->
+    <div class="overlay">
+      <div class="modal">
+        <!-- Close button toggles the same checkbox -->
+        <label for="menu-toggle" class="close">&times;</label>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="project_1.html">Project</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
   </header>
 
-
   <main>
-
-    <section class="hero">
-      <div class="portrait">
-        <img src="images/brandstory.jpg" alt="Brand story image" />
-      </div>
-      <div class="intro">
-        <h2>About</h2>
-        <h4>Eunkyung used to work in the marketing communication sector in both of retail and service business in
-          Seoul. <br><br> After moving in the Bay Area, she has developed a designer’s eyes to view the market reality
-          throughout the unique lens of her own identity. <br><br> She expects to earn dual certificates in Print
-          Production Design as well as WebApp Design in Digital Media Department at College of San Mateo. <br><br>
-          Alongside her studies, she works as a freelance graphic designer and digital marketing specialist.
-          She wants to study further about brand development theory. </h4>
-      </div>
-      <div class="button-choice">
-        <a href="about_statement.html"><button>View Design Statement</button></a>
-      </div>
-      <br><br><br><br>
-    </section>
-
+    <div class="container-wrapper">
+      <section class="intro">
+        <h1>About</h1>
+      </section>
+      <section class="hero">
+        <div class="portrait">
+          <img src="images/brandstory.jpg" alt="Brand story image" />
+        </div>
+        <div class="intro">
+          <h3>Eunkyung used to work in the marketing communication sector in both of retail and service business in
+            Seoul. After moving in the Bay Area, she has developed a designer’s eyes to view the market reality
+            throughout the unique lens of her own identity. <br><br> She expects to earn dual certificates in Print
+            Production Design as well as WebApp Design in Digital Media Department at College of San Mateo. <br><br>
+            Alongside her studies, she works as a freelance graphic designer and digital marketing specialist.
+            She wants to study further to become a brand development specialist based visual communication studies.
+          </h3><br></br>
+        </div>
+      </section>
+      <section class="hero">
+        <div class="container-about">
+          <h2>Education</h2>
+          <p>
+            <b>Google UXUI Prof. Design Certificate</b><br>Google Coursera 2025
+          </p>
+          <p><b>General Studies in A.A.</b><br>City College of San Francisco 2010</p>
+          <p><b>English Literature in B.A.</b><br>Sungshin Women's Univ. S.Korea 2006</p>
+        </div>
+        <div class="container-about">
+          <h2>Design Software</h2>
+          <p><b>Adobe Illustrator & Photoshop</b><br>Vector Illustration & Image Treatment</p>
+          <p><b>Adobe InDesign</b><br>2D Layout for Printed Media Production</p>
+          <p><b>Figma</b><br>UXUI Ideation and Mockup Development</p>
+        </div>
+        <div class="container-about">
+          <h2>Technical Software</h2>
+          <p><b>HTML, CSS & Java Script</b><br>Front-end Coding</p>
+          <p><b>GitHub</b><br>Editing Community for Front-end Dev.</p>
+          <p><b>Adobe Dreamweaver</b><br>Website Development</p>
+        </div>
+      </section>
+      <section class="hero">
+        <div class="button-choice">
+          <a href="index.html"><button>Home</button></a>
+          <a href="about_statement.html"><button>View Design Statement</button></a>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer>
@@ -54,6 +103,7 @@
     <div class="social-icons">
       <a href="https://www.instagram.com/ehandesignstudio"><img src="images/icon_insta.png" alt="Instagram" /></a>
       <a href="http://linkedin.com/in/eunkyung-han-60b575226"><img src="images/icon_linkedin.png" alt="LinkedIn" /></a>
+      <a href="https://github.com/eunkyunghan"><img src="images/icon_github.png" alt="GitHub Icon" /></a>
     </div>
   </footer>
 </body>

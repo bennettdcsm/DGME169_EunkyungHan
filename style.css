@@ -1,4 +1,5 @@
 /* styles.css */
+/* Global Style Rules starts here */
 main {
     display: flex;
     justify-content: center;
@@ -25,18 +26,23 @@ button {
 }
 
 button:hover {
-    background-color: #555;
+    background-color: #4C9A9A;
     transform: scale(1.02);
 }
 
 button:focus {
-    outline: 2px solid #888;
+    outline: 2px solid #afdcdc;
     outline-offset: 2px;
 }
 
 button:active {
-    background-color: #222;
+    background-color: #264e4e;
     transform: scale(0.98);
+}
+
+button-choice {
+    display: flex;
+    justify-content: center;
 }
 
 header {
@@ -68,42 +74,122 @@ footer {
     height: 24px;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
 .nav-links {
     display: flex;
     justify-content: flex-end;
     gap: 2rem;
+    font-size: 1.2rem;
     list-style: none;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #732E1F;
+    font-size: 1.2rem;
     font-weight: 500;
 }
 
 .nav-links a:hover {
     text-decoration-line: underline;
+    text-decoration-color: #4C9A9A;
+    font-weight: 800;
 }
 
-/* Starting index.html */
+/* --- Hamburger icon (hidden by default) --- */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #732E1F;
+    z-index: 1001;
+}
+
+/* --- Overlay (hidden by default) --- */
+.overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+/* --- Modal content --- */
+.modal {
+    background: #fffaf5;
+    padding: 24px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 360px;
+    margin: 80px auto;
+    position: relative;
+}
+
+.modal ul {
+    list-style: none;
+    padding: 0;
+}
+
+.modal a {
+    display: block;
+    padding: 12px 0;
+    font-size: 18px;
+    text-decoration: none;
+    color: #732E1F;
+}
+
+.modal a:hover {
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-color: #4C9A9A;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #732E1F;
+}
+
+/* --- Toggle behavior (checkbox hack) --- */
+#menu-toggle:checked~.overlay {
+    display: block;
+}
+
+#menu-toggle:checked~.hamburger {
+    display: none;
+}
+
+/* The end of glabal rules */
+
+/* index.html starts here */
 
 .container-wrapper {
     display: grid;
-    grid-template-rows: 1fr;
-    max-width: 960px;
+    grid-template-rows: 2fr;
+    max-width: 1200px;
+    margin: 2rem;
 }
 
 .hero {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 800px;
     padding: 2rem 2rem;
     gap: 1rem;
 }
 
 .intro {
-    flex: 1 1 300px;
+    flex: 1 1 100px;
 }
 
 .intro h1 {
@@ -117,15 +203,15 @@ footer {
 
 .portrait img {
     max-width: 300px;
-    border-radius: 0px;
+    border-radius: 4px;
     padding: 1rem;
 }
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 3rem;
-    padding: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+    padding: 1rem;
 }
 
 .project {
@@ -133,7 +219,7 @@ footer {
     padding: 1rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     text-align: center;
-    height: 200px;
+    height: 240px;
 }
 
 .project:hover {
@@ -143,20 +229,32 @@ footer {
 }
 
 .project img {
-    width: 100%;
+    max-width: 120%;
+    max-height: 80%;
 }
 
 /* The end of index.html */
 
-/* about_statement.html */
+/* about.html starts here */
 
-.container {
+.container-about {
+    display: grid;
+    grid-template-rows: repeat (3, auto);
+    gap: 1rem 2rem 1rem 2rem;
+    max-width: 400px;
+}
+
+/* The end of about.html */
+
+/* about_statement.html starts here */
+
+.container-aboutstatement {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     max-width: 600px;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    padding: 2rem;
+    margin-bottom: 0.4rem;
 }
 
 .image-container {
@@ -165,42 +263,30 @@ footer {
 
 /* The End of about_statement.html */
 
-/* Starting project.html */
-.container-project-wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-    align-content: center;
-    padding-bottom: 2rem;
-    padding-left: 0;
-    padding-right: 0;
-    max-width: 960px;
-    margin: 0 auto;
-    justify-items: center;
-}
-
-.container-project {
-    display: block;
-    padding: 0.5rem;
-    width: 100%;
-}
+/* project.html starts here */
 
 .artwork-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(240px, 1fr));
-    gap: 1rem;
-    justify-content: center;
-    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat (2, auto);
+    gap: 0.5rem;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .artwork-item {
     border: 0.5px solid #732E1F;
-    padding: 2rem;
+    padding: 10px;
+    margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-color: #732E1f;
+}
+
+.artwork-description {
+    font-size: 1rem;
+    color: #732E1F;
 }
 
 .artwork-item>h3 {
@@ -227,6 +313,30 @@ footer {
     transform: scale(1.2);
 }
 
+.expandable-image {
+    max-width: 300px;
+    transition: transform 0.3s ease, max-width 0.3s ease;
+    cursor: pointer;
+}
+
+.expandable-image.active {
+    transform: scale(1.05);
+    max-width: 900px;
+    z-index: 100;
+    position: relative;
+}
+
+body.overlay-active::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+}
+
 .lightbox {
     display: none;
     /* hidden by default */
@@ -244,8 +354,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
-    border-radius: 8px;
+    padding: 4rem 2rem 4rem 2rem;
     max-width: 95vw;
     max-height: 85vh;
     text-align: center;
@@ -278,33 +387,6 @@ footer {
     font-size: 2rem;
     color: #fff;
     cursor: pointer;
-}
-
-
-.artwork-item {
-    margin-bottom: 1rem;
-}
-
-.artwork-description {
-    font-size: 1rem;
-    color: #732E1F;
-}
-
-.button-choice {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 2rem;
-    gap: 1rem;
-}
-
-.button-choice a {
-    display: inline-block;
-}
-
-.button-choice button {
-    margin: 0;
 }
 
 /* The End of project.html */
@@ -350,13 +432,43 @@ footer {
 
 /* The End of contact.html */
 
+/* brandstory.html starts here */
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+}
+
+.container-text {
+    display: flex;
+    text-align: left;
+    padding: 1rem;
+}
+
+.item {
+    flex: 1;
+    min-width: 300px;
+    max-width: 900px;
+    border-color: #732E1F;
+    background-color: #fbf0f0;
+    padding: 1rem;
+    text-align: center;
+}
+
+.item img {
+    display: inline-block;
+    justify-content: center;
+    max-width: 100%;
+    max-height: 100%;
+
+}
+
+/* End of brandstory.html */
+
 /* Responsiveness */
 
 @media (max-width: 960px) {
-    .nav-links {
-        flex-direction: column;
-        align-items: flex-start;
-    }
 
     .hero {
         flex-direction: column;
@@ -368,22 +480,36 @@ footer {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .nav-links {
-        flex-direction: column;
-        align-items: flex-start;
+        display: none;
     }
 
-    .hero {
-        flex-direction: column;
-        text-align: left;
+    /* hide desktop nav */
+    .hamburger {
+        display: block;
+    }
+
+    /* show hamburger */
+    .modal {
+        width: 100%;
+        max-width: none;
+        border-radius: 0;
+    }
+
+    .artwork-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        /* Switch to 1 column */
     }
 
     .portrait img {
         max-width: 100%;
     }
 
-    .container-project {
+    .container-wrapper {
+        display: flex;
+        justify-content: center;
         flex-direction: column;
     }
 
@@ -395,11 +521,6 @@ footer {
     .main-content {
         width: 100%;
         order: 2;
-    }
-
-    .artwork-grid {
-        grid-template-columns: 1fr;
-        /* Switch to 1 column */
     }
 
     .expandable-image.active {
